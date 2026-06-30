@@ -8,6 +8,7 @@ import { AppService } from './app.service';
 import { AppLoggerService } from './common/logger/logger.service';
 import { SecurityMiddleware } from './common/middleware/security.middleware';
 import { dataSourceOptions } from './database/data-source';
+import { HttpClientModule } from './common/http-client/http-client.module';
 import { LoggerModule } from './common/logger/logger.module';
 import { StartupReadinessService } from './common/services/startup-readiness.service';
 
@@ -44,6 +45,7 @@ import { EventsModule } from './events/events.module';
     }),
     TypeOrmModule.forRoot(dataSourceOptions),
     LoggerModule.forRoot(),
+    HttpClientModule,
     EventsModule,
     AdminModule,
     AnalyticsModule,
